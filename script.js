@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             statsContainer.classList.add("hidden");
             cardsSection.classList.add("hidden");
-            statsContainer.innerHTML = `<p style="color:white;text-align:center;margin-top:2rem;">No data found.</p>`;
+            statsContainer.innerHTML = `<p style="color:#ef4444;text-align:center;margin-top:2rem;font-size:1.1rem;font-weight:500;">No data found.</p>`;
             statsContainer.classList.remove("hidden");
         } finally {
             searchButton.textContent = "Search";

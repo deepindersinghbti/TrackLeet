@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetMetric</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/740474005a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1>LeetMetric</h1>
+            <h2>Get your Leetcode metrics with the click of a button!</h2>
+            <p id="usernameText">Enter your Leetcode username below:</p>
+
+            <section class="user-input">
+
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Enter your username here" id="username-box">
+                    <button type="button" id="clear-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <button type="submit" id="search-btn">Search</button>
+
+            </section>
+
+
+            <section class="stats-container hidden">
+                <div class="progress">
+                    <div class="progress-item">
+                        <div class="easy-progress circle">
+                            <span id="easy-label"></span>
+                            Easy
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="medium-progress circle">
+                            <span id="medium-label"></span>
+                            Medium
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="hard-progress circle">
+                            <span id="hard-label"></span>
+                            Hard
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="cards-section hidden">
+                <div class="card" id="total-card">
+                    <div id="total-container" class="value-containers"></div>
+                    <p class="parameters">Total Solved</p>
+                </div>
+
+                <div class="card" id="acceptance-card">
+                    <div id="acceptance-value-container" class="value-containers">
+                    </div>
+                    <p class="parameters">Acceptance rate</p>
+
+                </div>
+
+                <div class="card" id="rank-card">
+                    <div id="rank-container" class="value-containers">
+                    </div>
+                    <p class="parameters">Ranking</p>
+                </div>
+
+                <div class="card" id="contribution-card">
+                    <div id="contribution-container" class="value-containers">
+                    </div>
+                    <p class="parameters">Contribution Points</p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

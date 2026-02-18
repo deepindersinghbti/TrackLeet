@@ -36,6 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
         input.focus();
     });
 
+    input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            const username = usernameInput.value.trim();
+            if (validateUsername(username)) {
+                fetchUserDetails(username);
+            }
+        }
+    });
 
     function validateUsername(username) {
         if (username.trim() === "") {

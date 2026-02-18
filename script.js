@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     async function fetchUserDetails(username) {
-        const url = `https://leetcode-stats-api.herokuapp.com/${username}`;
+        const url = `https://leetcode-api-faisalshohag.vercel.app/deepindersinghbti`;
 
         try {
             searchButton.textContent = "Searching...";
@@ -79,6 +79,16 @@ document.addEventListener("DOMContentLoaded", function () {
             statsContainer.classList.remove("hidden");
             cardsSection.classList.remove("hidden");
 
+            const accepted = data.matchedUserStats.acSubmissionNum.find(
+                item => item.difficulty === "All"
+            ).submissions;
+
+            const total = data.matchedUserStats.totalSubmissionNum.find(
+                item => item.difficulty === "All"
+            ).submissions;
+
+            const acceptanceRate = ((accepted / total) * 100).toFixed(2);
+
             // Update circles
             updateCircle(easyCircle, easyPercent, "#22c55e");
             updateCircle(mediumCircle, mediumPercent, "#facc15");
@@ -88,10 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
             mediumLabel.textContent = `${data.mediumSolved}/${data.totalMedium}`;
             hardLabel.textContent = `${data.hardSolved}/${data.totalHard}`;
 
-            acceptanceCard.textContent = `${data.acceptanceRate}` + "%";
+            acceptanceCard.textContent = `${acceptanceRate}` + "%";
             rankCard.textContent = `${data.ranking}`;
             totalCard.textContent = `${data.totalSolved}`;
-            contributionCard.textContent = `${data.contributionPoints}`;
+            contributionCard.textContent = `${data.contributionPoint}`;
 
         } catch (error) {
             statsContainer.classList.add("hidden");
